@@ -1,0 +1,16 @@
+Jazzy Authors
+-------------
+
+Mindaugas Idzelis
+
+Tony Chan
+Matthew Demerath
+Ben Galbraith
+Damien Guillaume
+Robert Gustavsson
+Jason Height
+Anthony Roy
+Stig Tanggaard
+Don Vail
+
+

@@ -1,0 +1,59 @@
+<body>
+<h2>mdsc</h2>
+<p>mdsc is a library for checking the spelling of individual words, using more
+  than one dictionary. It is designed, initially, to be a component in 
+  an identifier name recommendation system that is a product of the doctoral 
+  research of the author, 
+  <a href="http://facetus.org.uk/personal.html">Simon Butler</a>. 
+  mdsc allows the caller to spell check 
+  individual words with a set of dictionaries and to receive information about 
+  the dictionary in which the word is found or that provides alternative 
+  spellings.</p>
+  
+  
+  <p>mdsc is not designed to be used for spell checking documents. If you are 
+  looking for a library to spell check documents and blocks of text in a 
+  Java application (GUI or otherwise) then Jazzy 
+  (<a href="http://jazzy.sourceforge.net/">http://jazzy.sourceforge.net/</a>) 
+  may meet your requirements.</p>
+  
+  
+  <h2>Origins</h2>
+  <p>The core spell checking functionality of mdsc is based on the Jazzy spell 
+  checker code base (http://jazzy.sourceforge.net/), in particular the 
+  {@code com.swabunga.spell.engine} package. A list of the developers 
+  of Jazzy can be found in the file docs/JazzyAuthors.txt</p>
+   
+  <h2>Licence</h2>
+  <p>mdsc is released under the terms of the GNU Public Licence (GPL) v3 with the 
+  'classpath' exception.</p>
+  
+  <h2>Requirements</h2>
+  <p>mdsc requires a Java 8 JRE to run. Revising the code to run under Java 7 
+  is relatively straightforward.</p>
+  
+  <h2>Dictionaries</h2>
+  <p>mdsc supports two types of dictionaries, and is, as far as we know, 
+  independent of natural language, so long as the characters can be encoded 
+  in UTF-8. The dictionaries must be in the form of a word list 
+  (i.e. a plain text file with one word per line).</p>
+  
+  <p>We provide a default set of dictionaries derived from the 
+  <a href="http://wordlist.aspell.net/">SCOWL word lists</a>, and our own 
+  research. Temporarily, we include lists of abbreviations derived from 
+  <a href="https://msuweb.montclair.edu/~hillem/AMAP.tar.gz">Emily 
+  Hill's AMAP project</a>. mdsc is also designed so that new dictionaries 
+  can be created through the API and used in isolation or in groups. </p>
+  
+  <h2>Use</h2>
+  The {@linkplain DefaultDictionaryManager} is a convenience class that provides 
+  the default set of dictionaries.  The {@linkplain AbbreviationDictionaryManager} 
+  provides a set of abbreviation dictionaries. This class should only be used 
+  to identify abbreviations, not to try to correct them.
+  
+  
+  <h2>Logging</h2>
+  <p>mdsc uses <a href="http://www.slf4j.org/">SLF4J</a> for logging. 
+  Add the appropriate SLF4J jar file to the classpath of your
+  application</p>
+</body>

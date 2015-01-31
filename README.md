@@ -1,4 +1,60 @@
 mdsc
 ====
 
-A multi-dictionary spell checker intended to be used to check the spelling of words used in identifier names.
+mdsc (multi-dictionary spell checker) is a library for checking the spelling 
+of individual words, using more than one dictionary. It is designed, 
+initially, to be a component in an identifier name recommendation system 
+that is a product of the doctoral research of the author, Simon Butler.
+See http://facetus.org.uk/personal.html for more details
+
+mdsc allows the caller to spell check individual words with a set of 
+dictionaries and to receive information about the dictionary in which 
+the word is found or that provides alternative spellings.
+
+mdsc is not designed to be used for spell checking documents. If you are 
+looking for a library to spell check documents and blocks of text in a 
+Java application (GUI or otherwise) then Jazzy 
+(http://jazzy.sourceforge.net/) may meet your requirements.
+
+Origins
+=======
+The core spell checking functionality of mdsc is based on the Jazzy spell 
+checker code base (http://jazzy.sourceforge.net/), in particular the 
+com.swabunga.spell.engine package. A list of the developers of Jazzy can 
+be found in the file docs/JazzyAuthors.txt
+
+Licence
+=======
+mdsc is released under the terms of the GNU Public Licence (GPL) v3 with 
+the 'classpath' exception. See the files COPYING and LICENSE for details.
+
+Requirements
+============
+mdsc requires a Java 8 JRE to run. Revising the code to run under Java 7 
+is relatively straightforward.
+
+Dictionaries
+============
+mdsc supports two types of dictionaries, and is, as far as we know, 
+independent of natural language, so long as the characters can be encoded 
+in UTF-8. The dictionaries must be in the form of a word list (i.e. a 
+plain text file with one word per line).
+
+We provide a default set of dictionaries derived from the SCOWL word lists
+(http://wordlist.aspell.net/) and our own research. Temporarily, we 
+include lists of abbreviations derived from Emily Hill's AMAP project
+(https://msuweb.montclair.edu/~hillem/AMAP.tar.gz). mdsc is also designed 
+so that new dictionaries can be created through the API and used in 
+isolation or in groups.
+
+Usage
+=====
+The DefaultDictionaryManager is a convenience class that provides the 
+default set of dictionaries. The AbbreviationDictionaryManager 
+provides a set of abbreviation dictionaries. The class should only 
+be used to identify abbreviations, not to try to correct them.
+
+Logging
+=======
+mdsc uses SLF4J (http://www.slf4j.org/) for logging. Add the 
+appropriate SLF4J jar file to the classpath of your application.
