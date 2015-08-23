@@ -29,7 +29,7 @@ The full text of the licence can be found in the file LICENCE.txt
  * specific word lists. </p>
  * 
  * <p>The classes are organised so that a {@linkplain DictionaryManager} 
- * instantiates and collates a collections of {@linkplain Dictionary} objects 
+ * instantiates and collates collections of {@linkplain Dictionary} objects
  * that represent an individual word list. To spell check, obtain a 
  * {@linkplain DictionarySet} from the {@code DictionaryManager} and provide 
  * a single word to the {@linkplain DictionarySet#spellCheck(java.lang.String)}

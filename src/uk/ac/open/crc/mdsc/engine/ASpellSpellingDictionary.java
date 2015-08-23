@@ -70,7 +70,7 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
             LoggerFactory.getLogger( ASpellSpellingDictionary.class );
     
     /**
-     * The reference to a Transformator, used to transform a word into it's
+     * The reference to a Transformator, used to transform a word into its
      * phonetic code.
      */
     protected Transformator transformator;
@@ -282,7 +282,7 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
      * words that have the same phonetic code.
      *
      * @param word - the word we are trying spell correct
-     * @param Two dimensional array of int used to calculate edit distance.
+     * @param matrix two dimensional array of int used to calculate edit distance.
      * Allocating this memory outside of the function will greatly improve
      * efficiency.
      * @param wordList - the linked list that will get the best guess
