@@ -28,9 +28,16 @@ mdsc is released under the terms of the GNU Public Licence (GPL) v3 with
 the 'classpath' exception. See the files COPYING and LICENSE for details.
 
 ## Requirements
-
+### Java 8
 mdsc requires a Java 8 JRE to run. Revising the code to run under Java 7 
-is relatively straightforward.
+is relatively straightforward should it be necessary. However, future 
+versions may make greater use of Java 8 features, and be less readily 
+modified.
+### SLF4J
+SLF4J is used for logging. The slf4j-api-1.7.x.jar file should be on the 
+classpath along with an appropriate SJF4J jar for the application's 
+logging system.
+ 
 
 ## Dictionaries
 
