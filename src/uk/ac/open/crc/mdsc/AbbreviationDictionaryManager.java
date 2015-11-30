@@ -36,8 +36,6 @@ import org.slf4j.LoggerFactory;
  * or using the SCOWL files where abbreviations and acronyms are combined in 
  * {@code uk.ac.open.crc.mdsc.wordlists.scowl}.
  *
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public final class AbbreviationDictionaryManager extends DictionaryManager {
 

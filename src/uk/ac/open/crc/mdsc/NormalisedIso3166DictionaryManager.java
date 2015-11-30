@@ -29,9 +29,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Provides ISO 3166 two and three letter country codes normalised to lower 
  * case. The dictionaries are named "iso3166-2" and "iso3166-3".
- *
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public class NormalisedIso3166DictionaryManager extends DictionaryManager {
     private static final boolean IS_NORMALISED = true;

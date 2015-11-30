@@ -37,8 +37,7 @@ import org.slf4j.LoggerFactory;
  * The acronyms are normalised to lower case. A future version will include 
  * non-normalised acronyms so that the standard typography can be used to  
  * support the correction of typography in identifier names, if required.
- *
- * @author Simon Butler (simon@facetus.org.uk)
+ * </p>
  */
 public class AcronymDictionaryManager extends DictionaryManager {
     private static final boolean IS_NORMALISED = true;

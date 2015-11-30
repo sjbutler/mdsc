@@ -30,9 +30,6 @@ import org.slf4j.LoggerFactory;
  * 80, separated by language, the SCOWL 'hacker' dictionary of technical terms
  * and a dictionary of technical terms derived from identifier names. These
  * dictionaries contain words only; no initialisms or abbreviations.
- *
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public class DefaultDictionaryManager extends DictionaryManager {
     private static final boolean IS_NORMALISED = false;

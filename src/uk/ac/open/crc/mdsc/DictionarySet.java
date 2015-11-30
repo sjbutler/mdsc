@@ -29,16 +29,13 @@ import java.util.List;
  * mdsc. The dictionaries used are created from lists of words using the 
  * {@linkplain DictionaryManager} class. A DictionarySet is then obtained from 
  * the manager and used to spell check. 
- * 
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public class DictionarySet {
 
-    private final ArrayList<Dictionary> dictionaries;
+    private final List<Dictionary> dictionaries;
     
     /**
-     * Creates an empty set of dictionaries.{@code DictionarySet} is 
+     * Creates an empty set of dictionaries. {@code DictionarySet} is 
      * only ever instantiated by the manager class, so there is no
      * need for this constructor to be public.
      */
@@ -46,7 +43,7 @@ public class DictionarySet {
         this.dictionaries = new ArrayList<>();
     }
     
-    private DictionarySet( ArrayList<Dictionary> dictionaries ) {
+    private DictionarySet( List<Dictionary> dictionaries ) {
         this.dictionaries = dictionaries;
     }
     
@@ -62,11 +59,18 @@ public class DictionarySet {
         this( existingDictionarySet.getDictionaryList() );
     }
 
-    
+    /**
+     * Register a dictionary.
+     * @param dictionary a dictionary 
+     */
     void register( Dictionary dictionary ) {
-        this.dictionaries.add( dictionary );  // need to be more circumspect
+        this.dictionaries.add( dictionary );  // may need to be more circumspect
     }
     
+    /** 
+     * Remove a dictionary from the set.
+     * @param dictionaryName  a dictionary name
+     */
     void remove( String dictionaryName ) {
         throw new UnsupportedOperationException( "remove dictionary not implemented" );
     }
@@ -99,7 +103,7 @@ public class DictionarySet {
      * Recovers a list of the dictionaries in this set.
      * @return a list of dictionaries.
      */
-    protected ArrayList<Dictionary> getDictionaryList() {
+    protected List<Dictionary> getDictionaryList() {
         return this.dictionaries;
     }
     

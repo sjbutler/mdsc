@@ -29,9 +29,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Provides a dictionary of abbreviations where the entries have been 
  * normalised to lower case. 
- *
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public class NormalisedAbbreviationDictionaryManager extends DictionaryManager {
     private static final boolean IS_NORMALISED = true;

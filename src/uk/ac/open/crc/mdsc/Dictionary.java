@@ -45,8 +45,7 @@ import uk.ac.open.crc.mdsc.engine.Word;
  * {@linkplain NormalisedDictionaryManager} implements a dictionary that matches 
  * strings regardless of case, either in the dictionary or the string 
  * being tested.
- * 
- * @author Simon Butler (simon@facetus.org.uk)
+ * </p>
  */
 public class Dictionary {
 
@@ -101,7 +100,8 @@ public class Dictionary {
     
     
     // keep this package private for the moment -- there's no need for 
-    // this to be available in the public API
+    // this to be available in the public API for the moment
+    // One the use of cost has been fixed, then it needs to be in the API.
     final int costThreshold() {
         return this.maximumCost;
     }
@@ -113,7 +113,7 @@ public class Dictionary {
      * equivalent of 1 in conventional understanding of the Levenshtein distance.
      * The authors of Jazzy specify a number of values for individual 
      * transformations that mostly range from 90-100, but also include include
-     * a cost of 10 for changing case. See the uk.ac.open.crc.mdsc.engine
+     * a cost of 10 for changing case. See the {@code uk.ac.open.crc.mdsc.engine}
      * package.
      * 
      * @param word a word to be tested

@@ -52,7 +52,7 @@ import org.slf4j.LoggerFactory;
  * </p>
  */
 public class HashedSpellingDictionary extends ASpellSpellingDictionary {
-    private static final Logger logger = 
+    private static final Logger LOGGER = 
             LoggerFactory.getLogger( HashedSpellingDictionary.class );
 
     /**
@@ -99,8 +99,8 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * @param wordList The file containing the words list for the dictionary
      * @param isNormalised indicates whether the word list should be normalised
      * to lower case
-     * @throws java.io.IOException indicates problems reading the words list
-     * file
+     * @throws java.io.IOException if problems were encountered reading the 
+     * word list file
      */
     public HashedSpellingDictionary( Reader wordList, boolean isNormalised ) 
             throws IOException {
@@ -118,15 +118,15 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * Dictionary convenience Constructor.
      *
      * @param wordListFile The file containing the words list for the dictionary
-     * @throws java.io.FileNotFoundException indicates problems locating the
-     * words list file on the system
-     * @throws java.io.IOException indicates problems reading the words list
-     * file
+     * @throws java.io.FileNotFoundException if a problem was encountered 
+     * locating the word list file on the system
+     * @throws java.io.IOException if problems were encountered reading the 
+     * word list file
      */
     public HashedSpellingDictionary( File wordListFile ) 
             throws FileNotFoundException, IOException {
         this( new FileReader( wordListFile ) );
-        logger.info( "Dictionary loaded: {} words ", this.mainDictionary.size());
+        LOGGER.info( "Dictionary loaded: {} words ", this.mainDictionary.size());
     }
 
     /**
@@ -136,15 +136,15 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * @param wordListFile The file containing the words list for the dictionary
      * @param isNormalised indicates whether the word list should be normalised 
      * to lower case
-     * @throws java.io.FileNotFoundException indicates problems locating the
-     * words list file on the system
-     * @throws java.io.IOException indicates problems reading the words list
-     * file
+     * @throws java.io.FileNotFoundException if a problem was encountered 
+     * locating the word list file on the system
+     * @throws java.io.IOException if problems were encountered reading the 
+     * word list file
      */
     public HashedSpellingDictionary( File wordListFile, boolean isNormalised ) 
             throws FileNotFoundException, IOException {
         this( new FileReader( wordListFile ) );
-        logger.info( "Dictionary loaded: {} words ", this.mainDictionary.size());
+        LOGGER.info( "Dictionary loaded: {} words ", this.mainDictionary.size());
     }
 
     /**
@@ -154,10 +154,10 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * @param wordListFile The file containing the words list for the dictionary
      * @param phonetic The file to use for phonetic transformation of the
      * wordlist.
-     * @throws java.io.FileNotFoundException indicates problems locating the
-     * file on the system
-     * @throws java.io.IOException indicates problems reading the words list
-     * file
+     * @throws java.io.FileNotFoundException if a problem was encountered 
+     * locating the word list file on the system
+     * @throws java.io.IOException if problems were encountered reading the 
+     * word list file
      */
     public HashedSpellingDictionary( File wordListFile, File phonetic ) 
             throws FileNotFoundException, IOException {
@@ -175,10 +175,10 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * @param phonetic The file to use for phonetic transformation of the
      * wordlist.
      * @param phoneticEncoding Uses the character set encoding specified
-     * @throws java.io.FileNotFoundException indicates problems locating the
-     * file on the system
-     * @throws java.io.IOException indicates problems reading the words list or
-     * phonetic information
+     * @throws java.io.FileNotFoundException if a problem was encountered 
+     * locating the word list file on the system
+     * @throws java.io.IOException if problems were encountered reading the 
+     * word list file
      */
     public HashedSpellingDictionary( 
             File wordListFile, 
@@ -197,8 +197,8 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * @param wordListFile The file containing the words list for the dictionary
      * @param phonetic The reader to use for phonetic transformation of the
      * wordlist.
-     * @throws java.io.IOException indicates problems reading the words list or
-     * phonetic information
+     * @throws java.io.IOException if problems were encountered reading the 
+     * word list or phonetic information
      */
     public HashedSpellingDictionary( 
             Reader wordListFile, 
@@ -210,9 +210,9 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
     }
 
     /**
-     * Add words from a file to existing dictionary hashmap. This function can
-     * be called as many times as needed to build the internal word list.
-     * Duplicates are not added.
+     * Add words from a file to an existing dictionary {@code HashMap}. This 
+     * method can be called as many times as needed to build the internal 
+     * word list. Duplicates are not added.
      * <p>
      * Note that adding a dictionary does not affect the target dictionary file
      * for the addWord method. That is, addWord() continues to make additions to
@@ -221,7 +221,7 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * @param wordListFile a File object that contains the words, one word per
      * line.
      * @throws FileNotFoundException if the file is not located
-     * @throws IOException when a problem is encountered reading the file
+     * @throws IOException if a problem is encountered reading the file
      */
     public void addDictionary( File wordListFile ) 
             throws FileNotFoundException, IOException {
@@ -229,9 +229,9 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
     }
 
     /**
-     * Add words from a Reader to existing dictionary hashmap. This function can
-     * be called as many times as needed to build the internal word list.
-     * Duplicates are not added.
+     * Add words from a Reader to existing dictionary {@code HashMap}. This 
+     * method can be called as many times as needed to build the internal 
+     * word list. Duplicates are not added.
      * <p>
      * Note that adding a dictionary does not affect the target dictionary file
      * for the addWord method. That is, addWord() continues to make additions to
@@ -239,7 +239,7 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * </p>
      * @param wordList a Reader object that contains the words, one word per
      * line.
-     * @throws IOException when a problem is encountered adding words to the 
+     * @throws IOException if a problem is encountered adding words to the 
      * dictionary.
      */
     public void addDictionary( Reader wordList ) throws IOException {
@@ -264,7 +264,7 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * Each word in the reader should be on a separate line.
      * </p>
      * @param in a reader for a word list file
-     * @throws java.io.IOException when a problem is encountered reading the file.
+     * @throws java.io.IOException if a problem is encountered reading the file.
      */
     protected final void createDictionary( BufferedReader in ) 
             throws IOException {
@@ -287,7 +287,7 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * load the data in. I suspect that we could speed this up quite a lot.
      * </p>
      * @param in a reader for a word list file
-     * @throws java.io.IOException when a problem is encountered reading the file.
+     * @throws java.io.IOException if a problem is encountered reading the file.
      */
     protected final void createNormalisedDictionary( BufferedReader in ) 
             throws IOException {
@@ -307,7 +307,7 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
      * </p>
      *
      * @param in a reader for a word list file
-     * @throws java.io.IOException when a problem is encountered reading the file.
+     * @throws java.io.IOException if a problem is encountered reading the file.
      */
     protected void addDictionaryHelper( BufferedReader in ) throws IOException {
         String line;
@@ -359,7 +359,6 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
             if ( !isInDictionary ) {
                 wordList.add( word );
             }
-
         }
         else {
             wordList = new LinkedList<>();

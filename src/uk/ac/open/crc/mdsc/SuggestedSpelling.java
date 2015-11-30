@@ -27,9 +27,6 @@ import uk.ac.open.crc.mdsc.engine.Word;
  * A class containing a suggested spelling, the cost of changing the given 
  * word to the candidate spelling and the name of the dictionary used to 
  * identify the suggestion.
- *
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public final class SuggestedSpelling implements Comparable<SuggestedSpelling> {
 
@@ -92,6 +89,5 @@ public final class SuggestedSpelling implements Comparable<SuggestedSpelling> {
             return 1;
         }
     }
-    
     
 }

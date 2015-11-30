@@ -95,7 +95,12 @@ class EditDistance {
          * COST_REMOVE_CHAR and EDIT_INSERTION_COST values to - that is now fixed.
          * WRS: I added a distance for case comparison, so a misspelling of "i" would be closer to "I" than
          * to "a".
-         * SB: revised identifier names, moved some declarations to minimise scope
+         * SB: revised identifier names, moved some declarations to reduce scope
+         * SB: in the exising call chain, matrix is only ever instantiated as 
+         * SB: int[0][0] so is resized on entry. The value returned is calculated
+         * SB: within the resized matrix, so creating the matrix in this method
+         * SB: may be all that is required and the matrices can be removed
+         * SB: from the callers and the parameter list.
          */
 
         boolean isSwap;

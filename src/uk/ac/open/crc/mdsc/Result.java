@@ -24,9 +24,6 @@ import java.util.ArrayList;
 
 /**
  * The result of a spell check using a single dictionary.
- *
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public class Result {
 
@@ -71,10 +68,11 @@ public class Result {
      * Specifies a result that is correct and offers 
      * possible alternative spellings. This may not make it into production.
      * 
-     * @param word
-     * @param dictionaryName
-     * @param alternatives
-     * @param isCorrect 
+     * @param word the string tested
+     * @param dictionaryName the name of the dictionary reporting the result
+     * @param alternatives a list of alternatives if the word was not found in 
+     * the dictionary
+     * @param isCorrect true if the word is found in the dictionary
      */
     Result( 
             String word, 
@@ -88,7 +86,7 @@ public class Result {
     }
             
     /**
-     * 
+     * Indicates whether the 'word' is correctly spelt in the queried dictionaries.
      * @return {@code true} if the word was found in the dictionary.
      */
     public boolean isCorrect() {

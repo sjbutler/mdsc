@@ -136,11 +136,11 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
      * word.
      * <p>
      * This method is only needed to provide backward compatibility.
-     *
+     * </p>
      * @see #getSuggestions(String, int, int[][])
      * @param word Suggestions for given misspelt word
      * @param threshold The lower boundary of similarity to misspelt word
-     * @return Vector a List of suggestions
+     * @return a List of suggestions
      */
     @Override
     public List<Word> getSuggestions( String word, int threshold ) {
@@ -151,11 +151,12 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
 
     // SB: NB threshold is not used -- issues in practice may dictate
     // SB: that it needs to be used to control the returned list. 
+    // the abstraction level changes a lot (unhelpfully), so refactoring may be wise
     /**
      * Returns a list of Word objects that are the suggestions to an incorrect
      * word.
      * <p>
-     * @param word Suggestions for given misspelt word
+     * @param word suggestions for given misspelt word
      * @param threshold The lower boundary of similarity to misspelt word
      * @param matrix Two dimensional int array used to calculate edit distance.
      * Allocating this memory outside of the function will greatly improve
@@ -182,7 +183,7 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
         nearMissCodes.put( code, code );
         List<Word> phoneticList = getWordsFromCode( word, nearMissCodes );
 
-        // do some tranformations to pick up more results
+        // do some transformations to pick up more results
         //interchange
         nearMissCodes = new HashMap<>();
         char[] charArray = word.toCharArray();
@@ -234,13 +235,7 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
         //delete
         word = word.trim();
         charArray = word.toCharArray();
-        // new code
         char[] charArray2 = Arrays.copyOf( charArray, charArray.length - 1 ); 
-        // replaces following manual array copy in the original code
-//        char[] charArray2 = new char[charArray.length - 1];
-//        for ( int ix = 0; ix < charArray2.length; ix++ ) {
-//            charArray2[ix] = charArray[ix];
-//        }
 
         a = charArray[charArray.length - 1];
         int ii = charArray2.length;

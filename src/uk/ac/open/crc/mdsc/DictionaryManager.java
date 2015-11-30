@@ -39,8 +39,6 @@ import uk.ac.open.crc.mdsc.engine.SpellingDictionary;
  * <p>The subclasses of {@code DictionaryManager} are all convenience classes
  * with particular word lists loaded.
  * </p>
- *
- * @author Simon Butler (simon@facetus.org.uk)
  */
 public class DictionaryManager {
 

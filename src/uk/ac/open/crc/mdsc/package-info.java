@@ -26,7 +26,8 @@ The full text of the licence can be found in the file LICENCE.txt
  * wordlists package and the documentation for more information. 
  * Alternatively there are 
  * convenience classes that provide dictionaries constructed with 
- * specific word lists. </p>
+ * specific word lists. 
+ * </p>
  * 
  * <p>The classes are organised so that a {@linkplain DictionaryManager} 
  * instantiates and collates collections of {@linkplain Dictionary} objects
@@ -35,6 +36,7 @@ The full text of the licence can be found in the file LICENCE.txt
  * a single word to the {@linkplain DictionarySet#spellCheck(java.lang.String)}
  * method. A list of {@linkplain Result}s are returned one for each dictionary 
  * in the {@code DictionarySet} with an indication of correctness and suggested 
- * alternatives if incorrect.</p>
+ * alternatives if incorrect.
+ * </p>
  */
 package uk.ac.open.crc.mdsc;

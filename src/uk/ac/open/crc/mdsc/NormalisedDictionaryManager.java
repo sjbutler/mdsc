@@ -34,8 +34,7 @@ import org.slf4j.LoggerFactory;
  * dictionaries contain words only; no initialisms or abbreviations.
  * <p>
  * This class is a normalised version of {@linkplain DefaultDictionaryManager}.
- *
- * @author Simon Butler (simon@facetus.org.uk)
+ * </p>
  */
 public class NormalisedDictionaryManager extends DictionaryManager {
     private static final boolean IS_NORMALISED = true;
