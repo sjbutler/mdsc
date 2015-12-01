@@ -48,21 +48,21 @@ class EditDistance {
     /**
      * Fetches the spell engine CONFIGURATION properties.
      */
-    public static final Configuration CONFIGURATION = 
+    private static final Configuration CONFIGURATION = 
             Configuration.getConfiguration();
 
     /**
      * get the weights for each possible operation
      */
-    static final int COST_OF_DELETING_SOURCE_CHARACTER = 
+    private static final int COST_OF_DELETING_SOURCE_CHARACTER = 
             CONFIGURATION.getInteger( Configuration.COST_REMOVE_CHAR );
-    static final int COST_OF_INSERTING_SOURCE_CHARACTER = 
+    private static final int COST_OF_INSERTING_SOURCE_CHARACTER = 
             CONFIGURATION.getInteger( Configuration.COST_INSERT_CHAR );
-    static final int COST_OF_SUBSTITUTING_LETTERS = 
+    private static final int COST_OF_SUBSTITUTING_LETTERS = 
             CONFIGURATION.getInteger( Configuration.COST_SUBST_CHARS );
-    static final int COST_OF_SWAPPING_LETTERS = 
+    private static final int COST_OF_SWAPPING_LETTERS = 
             CONFIGURATION.getInteger( Configuration.COST_SWAP_CHARS );
-    static final int COST_OF_CHANGING_CASE = 
+    private static final int COST_OF_CHANGING_CASE = 
             CONFIGURATION.getInteger( Configuration.COST_CHANGE_CASE );
 
     /**

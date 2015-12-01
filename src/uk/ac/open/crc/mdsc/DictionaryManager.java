@@ -36,16 +36,18 @@ import uk.ac.open.crc.mdsc.engine.SpellingDictionary;
  * Spell checking is accomplished by using an instance of the {@code DictionarySet}
  * class obtained from the {@linkplain #dictionarySet()} method.
  *
- * <p>The subclasses of {@code DictionaryManager} are all convenience classes
+ * <p>
+ * The subclasses of {@code DictionaryManager} are all convenience classes
  * with particular word lists loaded.
  * </p>
  */
 public class DictionaryManager {
 
-    private static final int DEFAULT_MAXIMUM_COST = 3;
+    private static final int DEFAULT_MAXIMUM_COST = 200;
     private static final int DEFAULT_MAXIMUM_SUGESTIONS = 5;
     
-    private static final Logger LOGGER = LoggerFactory.getLogger( DictionaryManager.class );
+    private static final Logger LOGGER = 
+            LoggerFactory.getLogger( DictionaryManager.class );
     
     // --------------------------------
     
@@ -54,6 +56,10 @@ public class DictionaryManager {
     private final Configuration configuration;
     private DictionarySet dictionarySet;
     
+    /**
+     * Creates a {@code DictionaryManager} with an empty set of dictionaries. 
+     * Add dictionaries using the create methods.
+     */
     public DictionaryManager() {
         this.maximumCost = DEFAULT_MAXIMUM_COST;
         this.configuration = Configuration.getConfiguration();
@@ -75,6 +81,7 @@ public class DictionaryManager {
      * @param wordListFile a file containing a word list
      * @return an instance of {@code Dictionary}
      * @throws java.io.FileNotFoundException if the word list file cannot be found
+     * @throws java.io.IOException if a problem is encountered reading the word list
      */
     public final Dictionary create( String name, String description, File wordListFile ) 
             throws FileNotFoundException, IOException {
@@ -108,6 +115,7 @@ public class DictionaryManager {
      * @param isNormalised indicates whether the word list should be normalised to lower case.
      * @return an instance of {@code Dictionary}
      * @throws java.io.FileNotFoundException if the word list file cannot be found
+     * @throws java.io.IOException if a problem is encountered reading the word list
      */
     public final Dictionary create( 
             String name, 
@@ -132,8 +140,6 @@ public class DictionaryManager {
         return dictionary;
     } 
     
-    
-    
     /**
      * Creates a {@code Dictionary} using the supplied word list which can be 
      * in a jar file, on the file system or &hellip;. The dictionary
@@ -148,6 +154,7 @@ public class DictionaryManager {
      * @param isNormalised indicates whether the word list should be normalised to lower case.
      * @return an instance of {@code Dictionary}
      * @throws java.io.FileNotFoundException if the word list file cannot be found
+     * @throws java.io.IOException if a problem is encountered reading the word list
      */
     public final Dictionary create( 
             String name, 
@@ -172,12 +179,11 @@ public class DictionaryManager {
         return dictionary;
     } 
     
-    
-    
-    
     /**
      * Sets the maximum cost of any suggested spellings returned by 
-     * a dictionary. 
+     * a dictionary. Transformations have the following costs: 
+     * deletion 95, swap 90, substitution 100, and a change of case 10.
+     * The default maximum cost is 200.
      * 
      * @param maximumCost the maximum cost of a transformation to an 
      * alternative spelling.
@@ -199,7 +205,6 @@ public class DictionaryManager {
     public void setMaximumSuggestions( int maximumSuggestions ) {
         this.maximumSuggestions = maximumSuggestions;
     }
-    
     
     /**
      * Retrieves the current dictionary set.

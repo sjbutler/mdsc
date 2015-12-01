@@ -55,20 +55,23 @@ public class GenericTransformator implements Transformator {
      * This replace list is used if no phonetic file is supplied or it doesn't
      * contain the alphabet.
      */
-    private static final char[] defaultEnglishAlphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    private static final char[] DEFAULT_ENGLISH_ALPHABET = 
+            {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 
+                'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
+                'V', 'W', 'X', 'Y', 'Z'};
 
     /**
      * The alphabet start marker.
      *
      * @see GenericTransformator#KEYWORD_ALPHABET
      */
-    public static final char ALPHABET_START = '[';
+    private static final char ALPHABET_START = '[';
     /**
      * The alphabet end marker.
      *
      * @see GenericTransformator#KEYWORD_ALPHABET
      */
-    public static final char ALPHABET_END = ']';
+    private static final char ALPHABET_END = ']';
     /**
      * Phonetic file keyword indicating that a different alphabet is used for
      * this language. The keyword must be followed an
@@ -76,37 +79,37 @@ public class GenericTransformator implements Transformator {
      * of characters defining the alphabet and a
      * {@link GenericTransformator#ALPHABET_END ALPHABET_END} marker.
      */
-    public static final String KEYWORD_ALPHABET = "alphabet";
+    private static final String KEYWORD_ALPHABET = "alphabet";
     /**
      * Phonetic file lines starting with the keywords are skipped. The key words
      * are: version, followup, collapse_result. Comments, starting with '#', are
      * also skipped to the end of line.
      */
-    public static final String[] IGNORED_KEYWORDS = {"version", "followup", "collapse_result"};
+    private static final String[] IGNORED_KEYWORDS = {"version", "followup", "collapse_result"};
 
     /**
      * Start a group of characters which can be appended to the match expression
      * of the phonetic file.
      */
-    public static final char START_MULTI = '(';
+    private static final char START_MULTI = '(';
     /**
      * End a group of characters which can be appended to the match expression
      * of the phonetic file.
      */
-    public static final char END_MULTI = ')';
+    private static final char END_MULTI = ')';
     /**
      * During phonetic transformation of a word each numeric character is
      * replaced by this DIGIT_CODE.
      */
-    public static final String DIGIT_CODE = "0";
+    private static final String DIGIT_CODE = "0";
     /**
      * Phonetic file character code indicating that the replace expression is
      * empty.
      */
-    public static final String EMPTY_REPLACEMENT_EXPRESSION = "_";
+    private static final String EMPTY_REPLACEMENT_EXPRESSION = "_";
 
     private TransformationRule[] ruleArray = null;
-    private char[] alphabetString = defaultEnglishAlphabet;
+    private char[] alphabetString = DEFAULT_ENGLISH_ALPHABET;
 
     /**
      * Construct a transformation table from the phonetic file

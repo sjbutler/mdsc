@@ -86,7 +86,7 @@ public interface SpellingDictionary {
    * @param scoreThreshold Any words that have score less than this number are returned.
    * @param matrix Two dimensional int array used to calculate edit distance. Allocating 
    * this memory outside of the function will greatly improve efficiency.   
-   * @return List a List of suggested words
+   * @return a List of suggested words
    * @see uk.ac.open.crc.mdsc.engine.Word
    */
   public List<Word> getSuggestions(String sourceWord, int scoreThreshold , int[][] matrix);

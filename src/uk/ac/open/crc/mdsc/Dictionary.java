@@ -23,6 +23,7 @@ package uk.ac.open.crc.mdsc;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 import uk.ac.open.crc.mdsc.engine.SpellingDictionary;
 import uk.ac.open.crc.mdsc.engine.Word;
 
@@ -54,6 +55,7 @@ public class Dictionary {
     private final SpellingDictionary spellingDictionary;
     private final int maximumSuggestions;
     private final int maximumCost;
+    private final ReentrantLock lock;
     
     /**
      * Creates a dictionary.
@@ -76,6 +78,7 @@ public class Dictionary {
         this.spellingDictionary = spellingDictionary;
         this.maximumSuggestions = maximumSuggestions;
         this.maximumCost = maximumCost;
+        this.lock = new ReentrantLock( true );
     } 
     
     
@@ -99,9 +102,8 @@ public class Dictionary {
     }
     
     
-    // keep this package private for the moment -- there's no need for 
-    // this to be available in the public API for the moment
-    // One the use of cost has been fixed, then it needs to be in the API.
+    // keep this package private. The user can set the threshold in the 
+    // DictionaryManager.
     final int costThreshold() {
         return this.maximumCost;
     }
@@ -116,31 +118,44 @@ public class Dictionary {
      * a cost of 10 for changing case. See the {@code uk.ac.open.crc.mdsc.engine}
      * package.
      * 
+     * <p>
+     * NB The threshold value does not currently work as described. The 
+     * threshold set in the constructor is used, and the value passed is 
+     * ignored. There are two reasons: (1) this mechanism was not implemented
+     * in the underlying Jazzy engine classes, and (2) the constructor set 
+     * threshold seems adequate, so any fix is low-priority.
+     * </p>
+     * 
      * @param word a word to be tested
      * @param costThreshold the maximum cost of any suggested alternative spelling
      * @return an instance of {@code Result} containing the results of the test 
      * including a list of any alternative spellings.
      */
     public Result checkSpelling( String word, int costThreshold ) {
-        
-        if ( this.spellingDictionary.isCorrect( word ) ) {
-            return new Result( word, this.name );
-        }
-        else {
-            List<Word> alternativeSpellings = 
-                    this.spellingDictionary.getSuggestions( word, costThreshold );
-            ArrayList<SuggestedSpelling> suggestions = new ArrayList<>();
-            alternativeSpellings.stream().forEach( (Word alternative) -> {
-                suggestions.add( new SuggestedSpelling( alternative, this.name ) );
-            } );
-            
-            // sort and trim suggestions list before returning
-            Collections.sort( suggestions );
-            if ( suggestions.size() > this.maximumSuggestions ) {
-                suggestions.subList( this.maximumSuggestions, suggestions.size() - 1 ).clear();
+        this.lock.lock();
+        try {
+            if ( this.spellingDictionary.isCorrect( word ) ) {
+                return new Result( word, this.name );
             }
-            
-            return new Result( word, this.name, suggestions );
+            else {
+                List<Word> alternativeSpellings = 
+                        this.spellingDictionary.getSuggestions( word, costThreshold );
+                ArrayList<SuggestedSpelling> suggestions = new ArrayList<>();
+                alternativeSpellings.stream().forEach( (Word alternative) -> {
+                    suggestions.add( new SuggestedSpelling( alternative, this.name ) );
+                } );
+
+                // sort and trim suggestions list before returning
+                Collections.sort( suggestions );
+                if ( suggestions.size() > this.maximumSuggestions ) {
+                    suggestions.subList( this.maximumSuggestions, suggestions.size() - 1 ).clear();
+                }
+
+                return new Result( word, this.name, suggestions );
+            }
+        }
+        finally {
+            this.lock.unlock();
         }
     }
     
@@ -154,6 +169,5 @@ public class Dictionary {
     public Result checkSpelling( String word ) {
         return this.checkSpelling( word, this.maximumCost );
     }
-    
     
 }

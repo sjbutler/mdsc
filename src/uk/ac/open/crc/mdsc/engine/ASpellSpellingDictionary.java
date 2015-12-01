@@ -140,7 +140,7 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
      * @see #getSuggestions(String, int, int[][])
      * @param word Suggestions for given misspelt word
      * @param threshold The lower boundary of similarity to misspelt word
-     * @return a List of suggestions
+     * @return a List of suggested alternative spellings
      */
     @Override
     public List<Word> getSuggestions( String word, int threshold ) {
@@ -161,7 +161,7 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
      * @param matrix Two dimensional int array used to calculate edit distance.
      * Allocating this memory outside of the function will greatly improve
      * efficiency.
-     * @return Vector a List of suggestions
+     * @return Vector a List of suggested alternative spellings
      */
     @Override
     public List<Word> getSuggestions( 
@@ -323,7 +323,8 @@ public abstract class ASpellSpellingDictionary implements SpellingDictionary {
         int[][] matrix = new int[0][0];
         final int configDistance = config.getInteger( Configuration.SPELL_THRESHOLD );
 
-        codes.keySet().stream().map( (code) -> getWords( code ) ).forEach( (similarWordList) -> {
+        codes.keySet().stream()
+                .map( (code) -> getWords( code ) ).forEach( (similarWordList) -> {
             similarWordList.stream().forEach( (similarWord) -> {
                 int distance = EditDistance.getDistance( word, similarWord, matrix );
                 if ( distance < configDistance ) {

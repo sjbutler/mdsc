@@ -41,7 +41,7 @@ public final class SuggestedSpelling implements Comparable<SuggestedSpelling> {
      * @see Dictionary
      */
     SuggestedSpelling( Word word, String dictionaryName ) {
-        this.suggestedWord = word.getWord();
+        this.suggestedWord = word.getText();
         this.cost = word.getCost();
         this.dictionaryName = dictionaryName;
     }

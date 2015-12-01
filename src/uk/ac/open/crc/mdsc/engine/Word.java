@@ -26,22 +26,22 @@ import java.util.Objects;
 
 /**
  * The Word object holds information for one suggested spelling. It contains
- * both the suggested word string and the distance cost, which represents how
- * different the suggested word is from the misspelling.
+ both the suggested text string and the distance cost, which represents how
+ different the suggested text is from the misspelling.
  */
 public class Word implements Comparator<Word> {
 
-    private String word;
+    private String text;
     private final int score;
 
     /**
      * Constructs a new Word.
      *
-     * @param word The text of a word.
-     * @param score The word's distance cost
+     * @param text the text of a suggested spelling
+     * @param score the cost of transformation between the tested word and text
      */
-    public Word( String word, int score ) {
-        this.word = word;
+    public Word( String text, int score ) {
+        this.text = text;
         this.score = score;
     }
 
@@ -49,18 +49,18 @@ public class Word implements Comparator<Word> {
      * Constructs a new Word.
      */
     public Word() {
-        this.word = "";
+        this.text = "";
         this.score = 0;
     }
 
     /**
      * Compares two words, mostly for the purpose of sorting words.
      *
-     * @param word1 the first word
-     * @param word2 the second word
-     * @return -1 if the first word is more similar to the misspelled word
-     * <br>1 if the second word is more similar to the misspelled word
-     * <br>0 if both words are equally similar
+     * @param word1 the first text
+     * @param word2 the second text
+     * @return -1 if the first text is more similar to the misspelled text
+ <br>1 if the second text is more similar to the misspelled text
+ <br>0 if both words are equally similar
      *
      */
     @Override
@@ -75,15 +75,15 @@ public class Word implements Comparator<Word> {
     }
 
     /**
-     * Indicates if this word is equal to another one.
+     * Indicates if this text is equal to another one.
      *
-     * @param o The other word to compare
+     * @param o The other text to compare
      * @return The indication of equality
      */
     @Override
     public boolean equals( Object o ) {
         if ( o instanceof Word ) { // added by bd
-            return (((Word) o).getWord().equals( getWord() ));
+            return (((Word) o).getText().equals( getText() ));
         }
         return false;
     }
@@ -91,7 +91,7 @@ public class Word implements Comparator<Word> {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + Objects.hashCode( this.word );
+        hash = 47 * hash + Objects.hashCode(this.text );
         return hash;
     }
 
@@ -100,21 +100,21 @@ public class Word implements Comparator<Word> {
      *
      * @return the actual text of the suggest spelling
      */
-    public String getWord() {
-        return this.word;
+    public String getText() {
+        return this.text;
     }
 
     /**
      * Sets suggested spelling.
      *
-     * @param word The text to set for suggested spelling
+     * @param text the text of the suggested spelling
      */
-    public void setWord( String word ) {
-        this.word = word;
+    public void setText( String text ) {
+        this.text = text;
     }
 
     /**
-     * A cost measures how close a match this word was to the original word.
+     * A cost measures how close a match this text was to the original text.
      *
      * @return 0 if an exact match. Higher numbers are worse matches.
      * @see EditDistance
