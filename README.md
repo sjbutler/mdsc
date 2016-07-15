@@ -49,7 +49,7 @@ plain text file with one word per line).
 We provide a default set of dictionaries derived from the SCOWL word lists
 (http://wordlist.aspell.net/) and our own research. Temporarily, we 
 include lists of abbreviations derived from Emily Hill's AMAP project
-(currently available from https://msuweb.montclair.edu/~hillem/AMAP.tar.gz). 
+(currently available from http://users.drew.edu/ehill1/AMAP.tar.gz). 
 mdsc is also designed so that new or alternative dictionaries can 
 be added through the API and used in isolation or groups.
 
