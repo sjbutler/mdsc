@@ -4,7 +4,7 @@ mdsc (multi-dictionary spell checker) is a library for checking the spelling
 of individual words, using more than one dictionary. It is designed, 
 initially, to be a component in an identifier name recommendation system 
 that is a product of the doctoral research of the author, Simon Butler.
-See http://facetus.org.uk/personal.html for more details
+See http://www.facetus.org.uk/research for more details
 
 mdsc allows the caller to spell check individual words with a set of 
 dictionaries and to receive information about the dictionary in which 
