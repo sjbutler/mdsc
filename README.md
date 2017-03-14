@@ -2,7 +2,7 @@
 
 mdsc (multi-dictionary spell checker) is a library for checking the spelling 
 of individual words, using more than one dictionary. It is designed, 
-initially, to be a component in an identifier name recommendation system 
+initially, to be a component in an identifier name convention checking system 
 that is a product of the doctoral research of the author, Simon Butler.
 See http://www.facetus.org.uk/research for more details
 
@@ -41,14 +41,14 @@ logging system.
 
 ## Dictionaries
 
-mdsc supports two types of dictionaries, and is, as far as we know, 
+mdsc supports two types of dictionaries, and is, as far as known, 
 independent of natural language, so long as the characters can be encoded 
 in UTF-8. The dictionaries must be in the form of a word list (i.e. a 
 plain text file with one word per line).
 
-We provide a default set of dictionaries derived from the SCOWL word lists
-(http://wordlist.aspell.net/) and our own research. Temporarily, we 
-include lists of abbreviations derived from Emily Hill's AMAP project
+A default set of dictionaries derived from the SCOWL word lists
+(http://wordlist.aspell.net/) and Simon Butler's research are provided. 
+Temporarily, we include lists of abbreviations derived from Emily Hill's AMAP project
 (currently available from http://users.drew.edu/ehill1/AMAP.tar.gz). 
 mdsc is also designed so that new or alternative dictionaries can 
 be added through the API and used in isolation or groups.
