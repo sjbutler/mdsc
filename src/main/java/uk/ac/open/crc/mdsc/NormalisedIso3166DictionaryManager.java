@@ -42,12 +42,12 @@ public class NormalisedIso3166DictionaryManager extends DictionaryManager {
             super.create( "iso3166-2", 
                     "ISO3166-2 two letter ISO country codes.", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/iso-3166-2" ) ) , 
+                            "/wordlists/iso-3166-2" ) ) , 
                     IS_NORMALISED );
             super.create( "iso3166-3", 
                     "ISO3166-3 three letter ISO country codes.", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/iso-3166-3" ) ) , 
+                            "/wordlists/iso-3166-3" ) ) , 
                     IS_NORMALISED );
         }
         catch ( FileNotFoundException e) {

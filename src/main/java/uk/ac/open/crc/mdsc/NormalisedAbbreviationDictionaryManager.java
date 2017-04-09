@@ -46,17 +46,17 @@ public class NormalisedAbbreviationDictionaryManager extends DictionaryManager {
             create( "mdsc abbreviations", 
                     "A selection of abbreviations found in identifier names", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/abbreviations" ) ) , 
+                            "/wordlists/abbreviations" ) ) , 
                     IS_NORMALISED );
             create( "en_GB-abbreviations", 
                     "en_GB abbreviations from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/derived/en_GB-abbreviations" ) ) , 
+                            "/wordlists/derived/en_GB-abbreviations" ) ) , 
                     IS_NORMALISED );
             create( "en_US-abbreviations", 
                     "en_US abbreviations from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/derived/en_US-abbreviations" ) ) , 
+                            "/wordlists/derived/en_US-abbreviations" ) ) , 
                     IS_NORMALISED );
             
         }

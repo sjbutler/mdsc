@@ -1,3 +1,10 @@
 /nbproject/private/
 /build/
 /dist/
+/.nb-gradle/
+/.gradle/
+/gradle/
+/gradlew
+/gradle.bat
+/gradlew.bat
+

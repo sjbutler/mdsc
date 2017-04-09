@@ -1,0 +1,21 @@
+/*
+ * Simple Gradle configuration
+ */
+
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    jcenter()
+}
+
+source-compatibility = 1.8
+
+dependencies {
+    // external dependencies
+    api 'org.slf4j:slf4j-api:1.7.25'
+    api 'org.slf4j:slf4j-jdk14:1.7.25'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+

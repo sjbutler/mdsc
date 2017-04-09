@@ -56,29 +56,29 @@ public class AcronymDictionaryManager extends DictionaryManager {
             create( "mdsc acronyms", 
                     "A selection of acronyms found in identifier names", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/acronyms" ) ) , 
+                            "/wordlists/acronyms" ) ) , 
                     IS_NORMALISED );
             create( "mdsc trailing digit acronyms", 
                     "A selection of trailing digit acronyms found in identifier names", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/trailing-digit-acronyms" ) ) , 
+                            "/wordlists/trailing-digit-acronyms" ) ) , 
                     IS_NORMALISED );
             // long term ambition is to call this in from AMAP
             // rather than use this list
             create( "AMAP acronyms", 
                     "Acronyms from AMAP", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/amap/acronyms" ) ) , 
+                            "/wordlists/amap/acronyms" ) ) , 
                     IS_NORMALISED );
             create( "en_GB-acronyms", 
                     "en_GB acronyms from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/derived/en_GB-acronyms" ) ) , 
+                            "/wordlists/derived/en_GB-acronyms" ) ) , 
                     IS_NORMALISED );
             create( "en_US-acronyms", 
                     "en_US ascronyms from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/derived/en_US-acronyms" ) ) , 
+                            "/wordlists/derived/en_US-acronyms" ) ) , 
                     IS_NORMALISED );
             
         }

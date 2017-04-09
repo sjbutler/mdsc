@@ -47,32 +47,32 @@ public class NormalisedDictionaryManager extends DictionaryManager {
             create( "en_GB", 
                     "en_GB dictionary from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/scowl/en_GB" ) ) , 
+                            "/wordlists/scowl/en_GB" ) ) , 
                     IS_NORMALISED );
             create( "en_US", 
                     "en_US dictionary from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/scowl/en_US" ) ) , 
+                            "/wordlists/scowl/en_US" ) ) , 
                     IS_NORMALISED );
             create( "en_CA", 
                     "en_CA dictionary from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/scowl/en_CA" ) ) , 
+                            "/wordlists/scowl/en_CA" ) ) , 
                     IS_NORMALISED );
             create( "proper-nouns", 
                     "proper nouns dictionary from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/scowl/proper-nouns" ) ) , 
+                            "/wordlists/scowl/proper-nouns" ) ) , 
                     IS_NORMALISED );
             create( "hacker", 
                     "hacker dictionary from the SCOWL package", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/scowl/hacker" ) ) , 
+                            "/wordlists/scowl/hacker" ) ) , 
                     IS_NORMALISED );
             create( "technical", 
                     "mdsc technical dictionary", 
                     new InputStreamReader( this.getClass().getResourceAsStream( 
-                            "/uk/ac/open/crc/mdsc/wordlists/technical" ) ) , 
+                            "/wordlists/technical" ) ) , 
                     IS_NORMALISED );
             
         }
