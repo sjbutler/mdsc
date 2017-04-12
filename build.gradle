@@ -2,13 +2,15 @@
  * Simple Gradle configuration
  */
 
+apply plugin: 'java-library'
 
 repositories {
     // Use jcenter for resolving dependencies.
     jcenter()
 }
 
-source-compatibility = 1.8
+
+sourceCompatibility = 1.8
 
 dependencies {
     // external dependencies
