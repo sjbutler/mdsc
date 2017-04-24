@@ -3,12 +3,19 @@
  */
 
 apply plugin: 'java-library'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
 
 repositories {
     // Use jcenter for resolving dependencies.
     jcenter()
 }
 
+// metadata for the pom
+group = "uk.org.facetus"
+archivesBaseName = "mdsc"
+version = "0.1.0"
 
 sourceCompatibility = 1.8
 
@@ -19,5 +26,23 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    sign configurations.archives
 }
 
