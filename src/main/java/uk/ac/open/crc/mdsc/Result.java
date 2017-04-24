@@ -103,7 +103,7 @@ public class Result {
     
     /**
      * The word that was spell-checked.
-     * @return 
+     * @return the string tested
      */
     public String word() {
         return this.word;
@@ -111,7 +111,7 @@ public class Result {
     
     /**
      * Retrieves a list of suggested alternative spellings.
-     * @return 
+     * @return a list of suggested spellings
      */
     public ArrayList<SuggestedSpelling> suggestions() {
         return this.suggestions;
