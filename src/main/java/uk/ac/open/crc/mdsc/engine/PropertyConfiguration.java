@@ -23,7 +23,6 @@ package uk.ac.open.crc.mdsc.engine;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,19 +42,14 @@ public class PropertyConfiguration extends Configuration {
      * The persistent set of properties supported by the spell engine
      */
     private final Properties properties;
-    /**
-     * The name of the file containing spell engine properties
-     */
-    private final URL filename;
 
     /**
      * Constructs and loads spell engine properties configuration.
      */
     public PropertyConfiguration() {
         this.properties = new Properties();
-        this.filename = getClass().getClassLoader().getResource( 
-                "uk/ac/open/crc/mdsc/engine/configuration.properties" );
-        try ( InputStream in = this.filename.openStream() ) {
+        try ( InputStream in = this.getClass().getResourceAsStream( 
+                "/configuration/configuration.properties" ) ) {
             this.properties.load( in );
         }
         catch ( IOException e ) {
