@@ -15,7 +15,7 @@ repositories {
 // metadata for the pom
 group = "uk.org.facetus"
 archivesBaseName = "mdsc"
-version = "0.1.0"
+version = "0.1.1"
 
 sourceCompatibility = 1.8
 
