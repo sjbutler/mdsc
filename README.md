@@ -4,7 +4,7 @@ mdsc (multi-dictionary spell checker) is a library for checking the spelling
 of individual words, using more than one dictionary. It is designed, 
 initially, to be a component in an identifier name convention checking system 
 that is a product of the doctoral research of the author, Simon Butler.
-See http://www.facetus.org.uk/research for more details
+See http://www.facetus.org.uk/research for more details.
 
 mdsc allows the caller to spell check individual words with a set of 
 dictionaries and to receive information about the dictionary in which 
@@ -14,6 +14,9 @@ mdsc is not designed to be used for spell checking documents. If you are
 looking for a library to spell check documents and blocks of text in a 
 Java application (GUI or otherwise) then Jazzy 
 (http://jazzy.sourceforge.net/) may meet your requirements.
+
+v0.2.0 of mdsc introduces an API to access the wordlists for use in
+other applications. 
 
 ## Origins
 
@@ -33,6 +36,7 @@ mdsc requires a Java 8 JRE to run. Revising the code to run under Java 7
 is relatively straightforward should it be necessary. However, future 
 versions may make greater use of Java 8 features, and be less readily 
 modified.
+
 ### SLF4J
 SLF4J is used for logging. The slf4j-api-1.7.x.jar file should be on the 
 classpath along with an appropriate SJF4J jar for the application's 

@@ -1,24 +1,24 @@
 /*
- mdsc -- multiple dictionary spell checker
- Copyright (C) 2014-2015 The Open University
- Based on code from Jazzy - a Java library for Spell Checking
- Copyright (C) 2001-2005 Mindaugas Idzelis
- 
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation with the 'classpath' exception, 
- either version 3 of the License, or (at your option) any later version.
+    mdsc -- multiple dictionary spell checker
+    Copyright (C) 2014-2015 The Open University
+    Based on code from Jazzy - a Java library for Spell Checking
+    Copyright (C) 2001-2005 Mindaugas Idzelis
 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation with the 'classpath' exception, 
+    either version 3 of the License, or (at your option) any later version.
 
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
- The full text of the licence can be found in the file LICENCE.txt
-*/
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    The full text of the licence can be found in the file LICENCE.txt
+ */
 package uk.ac.open.crc.mdsc.engine;
 
 import java.io.BufferedReader;

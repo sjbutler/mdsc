@@ -10,12 +10,13 @@ apply plugin: 'signing'
 repositories {
     // Use jcenter for resolving dependencies.
     jcenter()
+    mavenCentral()
 }
 
 // metadata for the pom
 group = "uk.org.facetus"
 archivesBaseName = "mdsc"
-version = "0.1.1"
+version = "0.2.0"
 
 sourceCompatibility = 1.8
 
@@ -26,6 +27,7 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    testCompile 'org.hamcrest:hamcrest-library:1.3'
 }
 
 task javadocJar(type: Jar) {
