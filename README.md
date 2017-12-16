@@ -18,6 +18,18 @@ Java application (GUI or otherwise) then Jazzy
 v0.2.0 of mdsc introduces an API to access the wordlists for use in
 other applications. 
 
+Releases of mdsc are available from maven central. For gradle users
+just add 'uk.org.facetus:mdsc:0.2.0' as a dependency to your build
+file. Maven users should add the following to the pom.
+
+```
+<dependency>
+    <groupId>uk.org.facetus</groupId>
+    <artifactId>mdsc</artifactId>
+    <version>0.2.0</version>
+</dependency>
+```
+
 ## Origins
 
 The core spell checking functionality of mdsc is based on the Jazzy spell 
