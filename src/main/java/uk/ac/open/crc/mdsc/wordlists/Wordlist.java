@@ -35,35 +35,35 @@ public class Wordlist {
     
     /**
      * Creates a list of 'words' from the specified source file.
-     * @param x a ... 
+     * @param wordListName a constant from the {@code Wordlists} enumeration  
      */
-    public Wordlist(final Wordlists x) {
-	this(x, false, 1);
+    public Wordlist(final Wordlists wordListName) {
+	this(wordListName, false, 1);
     }
     
     /**
      * Creates a list of 'words' from the specified source file and allows
      * the words to be normalised to lower case.
-     * @param x a ... 
+     * @param wordListName a constant from the {@code Wordlists} enumeration 
      * @param normalised a boolean that indicates whether words in the
      * recovered list should be normalised to lower case.
      */
-    public Wordlist(final Wordlists x, final boolean normalised) {
-	this(x, normalised, 1);
+    public Wordlist(final Wordlists wordListName, final boolean normalised) {
+	this(wordListName, normalised, 1);
     }
     
     /**
      * Creates a list of 'words' from the specified source file, that can be 
      * normalised to lower case, and consists of at least a minimum number of 
      * characters.
-     * @param x a ... 
+     * @param wordListName a constant from the {@code Wordlists} enumeration 
      * @param normalised a boolean that indicates whether words in the
      * recovered list should be normalised to lower case.
      * @param minimumLength the length of the shortest token to include in the 
      * wordlist. 1 loads every token, and is the default for the other constructors.
      */
-    public Wordlist(final Wordlists x, final boolean normalised, final int minimumLength) {
-	WordlistReader reader = new WordlistReader(x);
+    public Wordlist(final Wordlists wordListName, final boolean normalised, final int minimumLength) {
+	WordlistReader reader = new WordlistReader(wordListName);
 	if (! normalised ) {
 	    if ( minimumLength == 1) {
 		this.list = reader.asList();
