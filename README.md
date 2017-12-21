@@ -15,18 +15,18 @@ looking for a library to spell check documents and blocks of text in a
 Java application (GUI or otherwise) then Jazzy 
 (http://jazzy.sourceforge.net/) may meet your requirements.
 
-v0.2.0 of mdsc introduces an API to access the wordlists for use in
+v0.2.1 of mdsc introduces an API to access the wordlists for use in
 other applications. 
 
 Releases of mdsc are available from maven central. For gradle users
-just add 'uk.org.facetus:mdsc:0.2.0' as a dependency to your build
+just add 'uk.org.facetus:mdsc:0.2.1' as a dependency to your build
 file. Maven users should add the following to the pom.
 
 ```
 <dependency>
     <groupId>uk.org.facetus</groupId>
     <artifactId>mdsc</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
 </dependency>
 ```
 
