@@ -1,6 +1,7 @@
 /*
     mdsc -- multiple dictionary spell checker
     Copyright (C) 2014-2015 The Open University
+    Copyright (C) 2018 Simon Butler
     Based on code from Jazzy - a Java library for Spell Checking
     Copyright (C) 2001-2005 Mindaugas Idzelis
 
@@ -126,7 +127,7 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
     public HashedSpellingDictionary( File wordListFile ) 
             throws FileNotFoundException, IOException {
         this( new FileReader( wordListFile ) );
-        LOGGER.info( "Dictionary loaded: {} words ", this.mainDictionary.size());
+        LOGGER.debug("Dictionary loaded: {} words ", this.mainDictionary.size());
     }
 
     /**
@@ -144,7 +145,7 @@ public class HashedSpellingDictionary extends ASpellSpellingDictionary {
     public HashedSpellingDictionary( File wordListFile, boolean isNormalised ) 
             throws FileNotFoundException, IOException {
         this( new FileReader( wordListFile ) );
-        LOGGER.info( "Dictionary loaded: {} words ", this.mainDictionary.size());
+        LOGGER.debug( "Dictionary loaded: {} words ", this.mainDictionary.size());
     }
 
     /**
