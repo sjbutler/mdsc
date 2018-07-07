@@ -8,7 +8,6 @@ apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
 repositories {
-    // Use jcenter for resolving dependencies.
     jcenter()
     mavenCentral()
 }
@@ -16,14 +15,14 @@ repositories {
 // metadata for the pom
 group = "uk.org.facetus"
 archivesBaseName = "mdsc"
-version = "0.2.3"
+version = "0.2.4"
 
 sourceCompatibility = 1.8
 
 dependencies {
     // external dependencies
     api 'org.slf4j:slf4j-api:1.7.25'
-    api 'org.slf4j:slf4j-jdk14:1.7.25'
+//    api 'org.slf4j:slf4j-jdk14:1.7.25'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'

@@ -19,14 +19,14 @@ v0.2.1 of mdsc introduced an API to access the wordlists for use in
 other applications. 
 
 Releases of mdsc are available from maven central. For gradle users
-just add 'uk.org.facetus:mdsc:0.2.3' as a dependency to your build
+just add 'uk.org.facetus:mdsc:0.2.4' as a dependency to your build
 file. Maven users should add the following to the pom.
 
 ```
 <dependency>
     <groupId>uk.org.facetus</groupId>
     <artifactId>mdsc</artifactId>
-    <version>0.2.3</version>
+    <version>0.2.4</version>
 </dependency>
 ```
 
