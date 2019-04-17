@@ -6,7 +6,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 
   <groupId>uk.org.facetus</groupId>
   <artifactId>mdsc</artifactId>
-  <version>0.2.4</version>
+  <version>0.2.4-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>mdsc</name>
@@ -34,6 +34,39 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
     <developerConnection>scm:git:ssh://github.com:sjbutler/mdsc.git</developerConnection>
     <url>https://github.com/sjbutler/mdsc/tree/master</url>
    </scm>
+       <build>
+	<plugins>
+	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-source-plugin</artifactId>
+		<version>3.0.1</version>
+		<executions>
+		    <execution>
+			<id>attach-sources</id>
+			<goals>
+			    <goal>jar-no-fork</goal>
+			</goals>
+		    </execution>
+		</executions>
+	    </plugin>
+	    <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-javadoc-plugin</artifactId>
+		<version>3.0.1</version>
+		<configuration>
+		    <additionalOptions>-html5</additionalOptions>
+		</configuration>
+		<executions>
+		    <execution>
+			<id>attach-javadocs</id>
+			<goals>
+			    <goal>jar</goal>
+			</goals>
+		    </execution>
+		</executions>
+	    </plugin>
+	</plugins>
+</build>
   <dependencies>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -54,4 +87,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       <scope>test</scope>
     </dependency>
   </dependencies>
+      <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 </project>
