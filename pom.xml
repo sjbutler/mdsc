@@ -6,7 +6,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 
   <groupId>uk.org.facetus</groupId>
   <artifactId>mdsc</artifactId>
-  <version>0.2.4-SNAPSHOT</version>
+  <version>0.2.4</version>
   <packaging>jar</packaging>
 
   <name>mdsc</name>

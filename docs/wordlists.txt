@@ -10,6 +10,10 @@ with mdsc are created from the SCOWL word lists found in SCOWL 2014-08-11.1
 size 80. The combination of word lists used to construct each dictionary 
 is given below. 
 
+A German language word list was created using the top 50,000 German words 
+in a 2018 list of words used in subtitles. The list is at https://github.com/hermitdave/FrequencyWords. 
+The list of German words is an experimental addition.
+
 * en_GB
  - british-proper-names.35
  - british-proper-names.80
@@ -354,3 +358,6 @@ seen in identifier names. The technical terms also include some computing
 brand names and Java neologisms, such as 'throwable'. This list is named 
 'technical' and is normalised to lower case. The list of abbreviations
 is named 'abbreviations' and is normalised to lower case.
+
+* de_DE-50k-2018
+A list of the 50,000 most frequently used German words in the open subtitles corpus.

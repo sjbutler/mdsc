@@ -25,8 +25,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Reader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import uk.ac.open.crc.mdsc.engine.Configuration;
 import uk.ac.open.crc.mdsc.engine.HashedSpellingDictionary;
 import uk.ac.open.crc.mdsc.engine.SpellingDictionary;
@@ -45,9 +43,6 @@ public class DictionaryManager {
 
     private static final int DEFAULT_MAXIMUM_COST = 200;
     private static final int DEFAULT_MAXIMUM_SUGESTIONS = 5;
-    
-    private static final Logger LOGGER = 
-            LoggerFactory.getLogger( DictionaryManager.class );
     
     // --------------------------------
     

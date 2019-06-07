@@ -32,6 +32,7 @@ import java.util.List;
 public class Wordlist {
 
     private List<String> list;
+    private String tag;
     
     /**
      * Creates a list of 'words' from the specified source file.
@@ -63,7 +64,8 @@ public class Wordlist {
      * wordlist. 1 loads every token, and is the default for the other constructors.
      */
     public Wordlist(final Wordlists wordListName, final boolean normalised, final int minimumLength) {
-	WordlistReader reader = new WordlistReader(wordListName);
+	this.tag = wordListName.tag();
+        WordlistReader reader = new WordlistReader(wordListName);
 	if (! normalised ) {
 	    if ( minimumLength == 1) {
 		this.list = reader.asList();
@@ -89,5 +91,12 @@ public class Wordlist {
     public List<String> list() {
 	
 	return this.list;
+    }
+    
+    /**
+     * A identifying string for the word list.
+     */
+    public String tag() {
+        return this.tag;
     }
 }
